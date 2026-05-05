@@ -39831,7 +39831,7 @@ exports.VERSION = '6.36.0'; // x-release-please-version
 /***/ 443:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const rateJoke = __nccwpck_require__(8863);
+const { rateJoke } = __nccwpck_require__(8863);
 const core = __nccwpck_require__(7484);
 
 async function run() {
@@ -39855,7 +39855,7 @@ module.exports = { run };
 
 const OpenAI = __nccwpck_require__(2583);
 
-module.exports = async function rateJoke(joke, token) {
+async function rateJoke(joke, token) {
   const endpoint = "https://models.github.ai/inference";
   
   // Initialize the OpenAI client with the custom endpoint and token
@@ -39881,6 +39881,7 @@ module.exports = async function rateJoke(joke, token) {
   return response.choices[0].message.content;
 }
 
+module.exports = { rateJoke };
 
 /***/ })
 
