@@ -34,7 +34,7 @@ async function rateJoke(joke, token) {
     response_format: zodResponseFormat(JokeRatingSchema, "joke_rating"),
   });
 
-  return response.choices[0]?.message?.parsed;
+  return response.choices[0]?.message?.parsed || JSON.parse(response.choices[0]?.message?.content);
 }
 
 module.exports = { rateJoke };
