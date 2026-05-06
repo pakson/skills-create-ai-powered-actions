@@ -45268,7 +45268,7 @@ async function run() {
 
     try {
         const rating = await rateJoke(joke, token);
-        core.setOutput("result", rating);
+        core.setOutput("result", JSON.stringify(rating));
     } catch (error) {
         core.setFailed(error.message);
     }
